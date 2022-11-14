@@ -27,6 +27,17 @@ namespace Project_Library.Controllers
               return View(await _context.Library.ToListAsync());
         }
 
+        // GET: Libraries/Search
+        public async Task<IActionResult> Search()
+        {
+            return View();
+        }
+        public async Task<IActionResult> SearchResult(string SearchText)
+        {
+            return View("Search", await _context.Library.Where(j => j.PersonName.Contains(SearchText)).ToListAsync());
+        }
+
+
         // GET: Libraries/Details/5
         public async Task<IActionResult> Details(int? id)
         {
