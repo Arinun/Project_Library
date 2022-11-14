@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Project_Library.Migrations
 {
-    public partial class InitApplicationUser : Migration
+    public partial class Library : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -52,6 +52,24 @@ namespace Project_Library.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Library",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdPerson = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PersonName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BookID = table.Column<int>(type: "int", nullable: false),
+                    BookName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DateBorrow = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DateReturn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Library", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -216,6 +234,9 @@ namespace Project_Library.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Library");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

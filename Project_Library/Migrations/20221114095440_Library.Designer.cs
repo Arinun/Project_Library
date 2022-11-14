@@ -12,8 +12,8 @@ using Project_Library.Areas.Identity.Data;
 namespace Project_Library.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221114074726_InitApplicationUser")]
-    partial class InitApplicationUser
+    [Migration("20221114095440_Library")]
+    partial class Library
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -250,6 +250,40 @@ namespace Project_Library.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Project_Library.Models.Library", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BookID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BookName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateBorrow")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateReturn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IdPerson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PersonName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Library");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
