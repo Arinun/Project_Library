@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Project_Library.Areas.Identity.Data;
+using Project_Library.Models;
 
 namespace Project_Library.Areas.Identity.Data;
 
@@ -21,6 +22,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         // Add your customizations after calling base.OnModelCreating(builder);
         builder.ApplyConfiguration(new ApplicationUserConfiguration());
     }
+
+    public DbSet<Project_Library.Models.Library> Library { get; set; }
 }
 public class ApplicationUserConfiguration : IEntityTypeConfiguration<ApplicationUser>
 {
