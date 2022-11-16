@@ -1,15 +1,17 @@
-﻿@model Project_Library.Models.Library
+﻿
+
+
+@model Project_Library.Models.Library
 
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Library</h4>
-<hr />
-<div class="row">
+<center>
+    <img src="https://scontent.fnak2-1.fna.fbcdn.net/v/t1.15752-9/312317250_3227801460815302_9205345016178735173_n.png?stp=dst-png_s2048x2048&_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=DrPRBmY8NJ8AX_-jfFl&_nc_ht=scontent.fnak2-1.fna&oh=03_AdQewffPO0PWfqTiPwcymI00IEZeUb77C8cqnMTE5rxAcg&oe=639B58E9" width="50%" height="50%"
+</center>
+<div class="form-control">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -42,17 +44,18 @@
                 <label asp-for="DateReturn" class="control-label"></label>
                 <input asp-for="DateReturn" class="form-control" />
                 <span asp-validation-for="DateReturn" class="text-danger"></span>
+                <h1></h1>
+                <h1></h1>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-success"/>
+                <a asp-action="Index" class="btn btn-primary">Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index" class="accordion-item">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

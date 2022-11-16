@@ -4,12 +4,22 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Details</h1>
-
+<style>
+    div.a {
+        text-align: center;
+        background-color: pink;
+    }
+</style>
 <div>
-    <h4>Library</h4>
-    <hr />
+<center>
+    <img src="https://scontent.fnak2-1.fna.fbcdn.net/v/t1.15752-9/312370885_501080455292818_4171147821950675704_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_ohc=OdeVt8PCJyAAX8dRWBG&_nc_ht=scontent.fnak2-1.fna&oh=03_AdRE42P4wcMSh1pVf4foZGTs6hGjgx080DZAdJ_fk0ao6w&oe=639B4D87" width="60%" height="60%"
+</center>
+<div class="a">
+    <h1>รายละเอียดข้อมูล</h1>
+    <h1> </h1>
+    </div>
+</div>
+<div class="form-control">
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.PersonName)
@@ -41,9 +51,8 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DateReturn)
         </dd>
-    </dl>
+        </dl
+        ><a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a> 
+        <a asp-action="Index" class="btn btn-primary">Back to List</a>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

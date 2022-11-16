@@ -4,16 +4,18 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Edit</h1>
-
-<h4>Library</h4>
-<hr />
-<div class="row">
+<center>
+    <img src="https://scontent.fnak2-1.fna.fbcdn.net/v/t1.15752-9/312563722_463607372543252_327365762355750830_n.png?stp=dst-png_s2048x2048&_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=MS8L_DXLD8gAX8RHMI2&_nc_ht=scontent.fnak2-1.fna&oh=03_AdTkyKsTz9q55EpgIiGFmHtTVXRpWrZ_RuZI9f3W-zophA&oe=639BF47D" width="50%" height="50%"
+</center>
+<div class="form-control">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="IdPerson" class="control-label"></label>
+                <input asp-for="IdPerson" class="form-control" />
+                <span asp-validation-for="IdPerson" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="PersonName" class="control-label"></label>
                 <input asp-for="PersonName" class="form-control" />
@@ -38,17 +40,20 @@
                 <label asp-for="DateReturn" class="control-label"></label>
                 <input asp-for="DateReturn" class="form-control" />
                 <span asp-validation-for="DateReturn" class="text-danger"></span>
+                <h1></h1>
+                <h1></h1>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-primary">Back to List</a>
             </div>
+
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

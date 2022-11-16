@@ -7,33 +7,36 @@
 <style>
     div.a {
         text-align: center;
+        background-color: pink;
     }
 </style>
-
-<body id="page-top">
-
-    <div class="a">
-        <h1> Welcome</h1>
-    </div>
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-            <div class="container-fluid">
-                <!-- Page Heading -->               
-                <form asp-action="SearchResult" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div asp-validation-summary="ModelOnly"></div>
-                    <label for="Name" class="control-label"></label>
-                    <h3 class="h3 mb-0 text-blue-500">SearchName</h3><div class="input-group">
-                        <input name="SearchText" class="form-control bg-light border-0 small" placeholder="Search for name..."
-                               aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <input type="submit" value="Search" class="btn btn-primary" />
-                            </button>
-                        </div>
+<body>
+    <center>
+        <img src="https://scontent.fnak2-1.fna.fbcdn.net/v/t1.15752-9/312370885_501080455292818_4171147821950675704_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_ohc=OdeVt8PCJyAAX8dRWBG&_nc_ht=scontent.fnak2-1.fna&oh=03_AdRE42P4wcMSh1pVf4foZGTs6hGjgx080DZAdJ_fk0ao6w&oe=639B4D87"
+    </center>
+    <!-- Page -->
+    <div >
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <form asp-action="SearchResult" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <div asp-validation-summary="ModelOnly"></div>
+                <label for="Name" class="control-label"></label>
+                <!-- <h3 class="h3 mb-0 text-blue-500">SearchName</h3>-->
+                <div class="input-group">
+                    <input name="SearchText" class="form-control bg-light border-0 small" placeholder="Search for name..."
+                           aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <input type="submit" value="Search" class="btn btn-primary" />
+                        </button>
                     </div>
-                </form>
-                <!-- Content Row -->
-                <div class="row">                                                   
+                </div>
+            </form>
+            <!-- Content Row -->
+            <h1></h1>
+            <h1></h1>
+            <div class="form-control">
+            <div >
                 <table class="table">
                     <thead>
                         <tr>
@@ -89,14 +92,20 @@
                         }
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+    <h1></h1>
+        <h1></h1>
 
-            </div>
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">บริการยืม-คืนหนังสือ</h1>
-                <a asp-action="Create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                    <i class="fas fa-download fa-sm text-white-50"></i> Cilck New User
-                </a>
-            </div>
- </body>
- 
+    <div>
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">บริการยืม-คืนหนังสือ</h1>
+            <a asp-action="Create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-download fa-sm text-white-50"> </i> Cilck New User
+            </a>
+        </div>
+    </div>
+</body>
+
 
