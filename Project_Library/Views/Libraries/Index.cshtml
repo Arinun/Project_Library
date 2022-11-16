@@ -1,21 +1,21 @@
 ﻿@model IEnumerable<Project_Library.Models.Library>
 
-@{
+    @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<style>
-    div.a {
-        text-align: center;
-        background-color: pink;
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
     }
-</style>
-<body>
-    <center>
-        <img src="https://scontent.fnak2-1.fna.fbcdn.net/v/t1.15752-9/312370885_501080455292818_4171147821950675704_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_ohc=OdeVt8PCJyAAX8dRWBG&_nc_ht=scontent.fnak2-1.fna&oh=03_AdRE42P4wcMSh1pVf4foZGTs6hGjgx080DZAdJ_fk0ao6w&oe=639B4D87"
-    </center>
-    <!-- Page -->
-    <div >
+    <style>
+        div.a {
+            text-align: center;
+            background-color: pink;
+        }
+    </style>
+  
+        <center>
+            <img src="https://scontent.fnak2-1.fna.fbcdn.net/v/t1.15752-9/312370885_501080455292818_4171147821950675704_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_ohc=OdeVt8PCJyAAX8dRWBG&_nc_ht=scontent.fnak2-1.fna&oh=03_AdRE42P4wcMSh1pVf4foZGTs6hGjgx080DZAdJ_fk0ao6w&oe=639B4D87"
+        </center>
+        <!-- Page -->
+        
         <div class="container-fluid">
             <!-- Page Heading -->
             <form asp-action="SearchResult" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -28,41 +28,43 @@
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="button">
                             <input type="submit" value="Search" class="btn btn-primary" />
-                        </button>
-                    </div>
+                </button>
+                <h1></h1>
+                <h1></h1>
+            </div>
+            
                 </div>
             </form>
-            <!-- Content Row -->
-            <h1></h1>
-            <h1></h1>
+    
             <div class="form-control">
-            <div >
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.IdPerson)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.PersonName)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.BookID)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.BookName)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.DateBorrow)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.DateReturn)
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
+                <!-- Content Row -->
+               
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IdPerson)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PersonName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BookID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BookName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DateBorrow)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DateReturn)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
                         {
                             <tr>
                                 <td>
@@ -90,22 +92,20 @@
                                 </td>
                             </tr>
                         }
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
+            
+       
+        <div>
+            <h1></h1>
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">บริการยืม-คืนหนังสือ</h1>
+                <a asp-action="Create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                    <i class="fas fa-download fa-sm text-white-50"> </i> Cilck New User
+                </a>
             </div>
         </div>
-    </div>
-    <h1></h1>
-        <h1></h1>
 
-    <div>
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">บริการยืม-คืนหนังสือ</h1>
-            <a asp-action="Create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                <i class="fas fa-download fa-sm text-white-50"> </i> Cilck New User
-            </a>
-        </div>
-    </div>
-</body>
 
 
